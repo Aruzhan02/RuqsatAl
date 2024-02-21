@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{% block head_title %}{% endblock %}</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    {% block extra_head %}
+    {% endblock %}
+</head>
+
+<body>
+    {% block body %}
+
+    <!-- {% if messages %}
+    <div>
+        <strong>Messages:</strong>
+        <ul>
+            {% for message in messages %}
+            <li>{{message}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %} -->
+    <!-- <nav style="background-color: #f0f0f0;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 10px;">
+            {% if user.is_authenticated %}
+            <a style="text-decoration: none; color: #333; font-weight: bold;" href="{% url 'account_email' %}">Change E-mail</a>
+            <a style="text-decoration: none; color: #333; font-weight: bold; " href="{% url 'account_logout' %}">Sign Out</a>
+            {% else %}
+            <a style="text-decoration: none; color: #333; font-weight: bold; margin-right: 25px;" href="{% url 'account_login' %}">Sign In</a>
+            <a style="text-decoration: none; color: #333; font-weight: bold;" href="{% url 'account_signup' %}">Sign Up</a>
+            {% endif %}
+        </div>
+    </nav> -->
+    
+    <!-- <div class="nav">
+        <strong>Menu:</strong>
+        <ul>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'account_email' %}">Change E-mail</a></li>
+            <li><a href="{% url 'account_logout' %}">Sign Out</a></li>
+            {% else %}
+            <li><a href="{% url 'account_login' %}">Sign In</a></li>
+            <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
+            {% endif %}
+        </ul>
+    </div> -->
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+        {% endblock %}
+        {% block extra_body %}
+        {% endblock %}
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+  
+</body>
+
+</html>

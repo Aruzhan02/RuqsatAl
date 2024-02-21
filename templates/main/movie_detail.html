@@ -1,0 +1,63 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    .movie-detail-content {
+        margin-top: 100px; 
+    }
+</style>
+<div class="container movie-detail-content">
+    <div class="row">
+        <div class="col-lg-4 mb-4">
+            <div class="movie-poster">
+                <img src="{{ movie.poster_path }}" alt="{{ movie.title }}" class="img-fluid">
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="movie-details">
+                <p class="info"><strong>Original Title:</strong> {{ movie.original_title }}</p>
+                <p class="info"><strong>Original Language:</strong> {{ movie.original_language }}</p>
+                <p class="info"><strong>Genres:</strong> {% for genre in movie_genres %}{{ genre.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+                <p class="info"><strong>Release Date:</strong> {{ movie.release_date }}</p>
+                <p class="info"><strong>Popularity:</strong> {{ movie.popularity }}</p>
+                <p class="info"><strong>Rating:</strong> {{ movie.vote_average }}</p>
+                <p class="info"><strong>Vote Count:</strong> {{ movie.vote_count }}</p>
+                <div class="book-now mt-4">
+                    <a href="{% url 'booking' pk=movie.pk %}" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="section-title">Comments</h2>
+            <div class="comment-list">
+                {% for comment in comments %}
+                <div class="comment mb-4">
+                    <p class="comment-user"><strong>{{ comment.user }}</strong></p>
+                    <p class="comment-datetime">{{ comment.datetime }}</p>
+                    <p class="comment-message">{{ comment.message }}</p>
+                </div>
+                {% empty %}
+                <p>No comments yet.</p>
+                {% endfor %}
+            </div>
+            <div class="comment-form mt-5">
+                <h2 class="section-title">Add a Comment</h2>
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <textarea name="comment" class="form-control" rows="4" placeholder="Write your comment here"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

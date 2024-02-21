@@ -1,0 +1,152 @@
+/* Reset some default browser styles */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+  }
+  
+  body {
+	font-family: 'Arial', sans-serif;
+	background-color: #f8f9fa; /* Light gray background */
+  }
+  
+  .container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+  }
+  
+  .wrap {
+	width: 100%;
+	max-width: 400px;
+	background-color: #ffffff; /* White background */
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-wrap {
+	text-align: center;
+  }
+  
+  .login-wrap h1 {
+	font-size: 24px;
+	margin-bottom: 20px;
+	color: #333333; /* Dark text color */
+  }
+  
+  .form-group {
+	margin-bottom: 20px;
+  }
+  
+  /* Style the form fields */
+  form input,
+  form button {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ced4da; /* Light gray border */
+	border-radius: 5px;
+	background-color: #f1f3f5; /* Light gray background */
+  }
+  
+  /* Style the Remember Me checkbox */
+  .checkbox-wrap {
+	display: inline-block;
+	position: relative;
+	padding-left: 30px;
+	cursor: pointer;
+  }
+  
+  .checkbox-wrap input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+  }
+  
+  .checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 20px;
+	width: 20px;
+	background-color: #fff;
+	border: 1px solid #adb5bd; /* Light gray border */
+	border-radius: 3px;
+  }
+  
+  .checkbox-wrap:hover input ~ .checkmark {
+	background-color: #f8f9fa; /* Light gray background on hover */
+  }
+  
+  .checkbox-wrap input:checked ~ .checkmark {
+	background-color: #007bff; /* Blue color when checked */
+	border: 1px solid #007bff;
+  }
+  
+  .checkmark:after {
+	content: '';
+	position: absolute;
+	display: none;
+  }
+  
+  .checkbox-wrap input:checked ~ .checkmark:after {
+	display: block;
+  }
+  
+  .checkbox-wrap .checkmark:after {
+	left: 7px;
+	top: 3px;
+	width: 5px;
+	height: 10px;
+	border: solid #fff;
+	border-width: 0 2px 2px 0;
+	transform: rotate(45deg);
+  }
+  
+  /* Style the Sign In button */
+  .submit {
+	background-color: #007bff; /* Blue color */
+	color: #ffffff; /* White text color */
+	cursor: pointer;
+  }
+  
+  .submit:hover {
+	background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  /* Style the Forgot Password link */
+  .text-md-right a {
+	color: #007bff; /* Blue color */
+  }
+  
+  .text-md-right a:hover {
+	text-decoration: underline;
+  }
+  
+  /* Style the Sign Up link */
+  .text-center a {
+	color: #007bff; /* Blue color */
+  }
+  
+  .text-center a:hover {
+	text-decoration: underline;
+  }
+  
+
+
+  .sign-menu ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: 400;
+    font-size: 16px;
+}
+.sign-menu ul li {
+    list-style: none;
+}
+.sign-menu ul {
+    padding-left: 10px;
+}
+.sign-menu {
+    padding: 20px;
+}
